@@ -5,14 +5,14 @@ import { siteConfig } from "@/data/site-config";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-center justify-center px-4 sm:px-6 md:px-8 overflow-hidden">
       {/* Ambient background glow */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-violet-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="mx-auto max-w-4xl text-center">
+      <div className="mx-auto w-full max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,7 +31,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-tight break-words"
         >
           Hi, I'm{" "}
           <span className="gradient-text">{siteConfig.name}</span>
@@ -41,7 +41,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-4 text-lg md:text-xl text-muted-foreground font-medium"
+          className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-muted-foreground font-medium"
         >
           {siteConfig.role}
         </motion.p>
@@ -50,7 +50,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-4 text-base md:text-lg text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed"
+          className="mt-3 sm:mt-4 text-sm sm:text-base md:text-lg text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0"
         >
           {siteConfig.tagline}
         </motion.p>
@@ -59,15 +59,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full"
         >
-          <Button size="lg" asChild>
+          <Button size="lg" className="w-full sm:w-auto" asChild>
             <a href="#projects">
               <ExternalLink size={18} />
               View Projects
             </a>
           </Button>
-          <Button variant="outline" size="lg" asChild>
+          <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
             <a href="#contact">
               <Mail size={18} />
               Contact Me
@@ -79,7 +79,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 1.2 }}
-          className="mt-20"
+          className="mt-12 sm:mt-16 md:mt-20"
         >
           <a
             href="#about"

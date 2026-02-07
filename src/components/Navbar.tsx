@@ -26,7 +26,7 @@ export function Navbar() {
           : "bg-transparent"
       )}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 md:px-8 py-4">
         <a
           href="#"
           className="text-lg font-bold tracking-tight hover:text-primary transition-colors"
@@ -35,7 +35,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-4 lg:gap-8">
           {siteConfig.navLinks.map((link) => (
             <li key={link.href}>
               <a

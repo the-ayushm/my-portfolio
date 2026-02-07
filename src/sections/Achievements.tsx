@@ -27,14 +27,14 @@ export function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.08 }}
-              className="group rounded-xl border border-border/50 bg-card/30 p-5 transition-all duration-300 hover:border-primary/30 hover:bg-card/60"
+              className="group rounded-xl border border-border/50 bg-card/30 p-4 sm:p-5 transition-all duration-300 hover:border-primary/30 hover:bg-card/60 min-w-0"
             >
               <div className="flex items-start gap-3">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
                   <Icon size={16} />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm leading-tight">
+                  <h3 className="font-semibold text-sm leading-tight break-words">
                     {item.title}
                   </h3>
                   <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">

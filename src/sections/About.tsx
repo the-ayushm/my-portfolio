@@ -27,13 +27,13 @@ export function About() {
       title="About Me"
       subtitle="Engineer who ships."
     >
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2 min-w-0">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="space-y-5"
+          className="space-y-5 min-w-0"
         >
           <p className="text-muted-foreground leading-relaxed text-base">
             I'm a Full Stack Developer with a focus on building production-grade
@@ -58,7 +58,7 @@ export function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="space-y-4"
+          className="space-y-4 min-w-0"
         >
           {highlights.map((item, i) => (
             <motion.div

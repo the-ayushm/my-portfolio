@@ -48,7 +48,7 @@ export function Contact() {
       title="Get in Touch"
       subtitle="Have an opportunity or want to collaborate? Let's connect."
     >
-      <div className="grid gap-10 md:grid-cols-2">
+      <div className="grid gap-8 sm:gap-10 md:grid-cols-2">
         {/* Contact form */}
         <motion.form
           onSubmit={handleSubmit}
@@ -148,7 +148,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-medium">{link.label}</p>
-                  <p className="text-xs text-muted-foreground truncate max-w-[250px]">
+                  <p className="text-xs text-muted-foreground truncate max-w-[180px] sm:max-w-[250px]">
                     {link.href.replace("mailto:", "")}
                   </p>
                 </div>
