@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
@@ -13,6 +13,23 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleMobileNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      e.preventDefault();
+      setIsMobileOpen(false);
+
+      // Small delay so the menu exit animation doesn't block scrolling
+      setTimeout(() => {
+        const id = href.replace("#", "");
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    },
+    []
+  );
 
   return (
     <motion.header
@@ -84,7 +101,7 @@ export function Navbar() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={() => setIsMobileOpen(false)}
+                    onClick={(e) => handleMobileNavClick(e, link.href)}
                     className="block rounded-lg px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
                   >
                     {link.label}
